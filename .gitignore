@@ -1,0 +1,16 @@
+# http://git-scm.com/docs/gitignore/
+
+.coverage
+*.pyc
+.idea
+.coverage
+venv
+*.swp
+.DS_STORE
+env
+include
+lib
+bin
+share
+local
+

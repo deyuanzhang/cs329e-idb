@@ -1,0 +1,5 @@
+runtime: python27
+int: gunicorn -b :$PORT app:app
+
+runtime_config:
+  python_version: 3
