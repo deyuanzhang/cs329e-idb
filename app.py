@@ -24,7 +24,7 @@ app = Flask(__name__)
 @app.route('/')  # URL for function (default for home page)
 @app.route('/index')  # Secondary URL for function
 def index():
-    return render_template('splash.html')  # located in templates/
+    return render_template('about.html')  # located in templates/
 
 @app.errorhandler(500)
 def server_error(e):
