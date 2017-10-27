@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% include "template.html" %}
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Our Moves</h1>
+    </div>
+    <div class="row">
+      <center>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h2>Meet the Types!</h2></div>
+            <div class="panel-body">
+              <img src="http://pm1.narvii.com/6371/c9a5acc4b8f86d11ada23dd8bea2502cd34974f2_hq.jpg" alt="Fire"/>
+              <h1><a href={{ url_for('fire')}}>Fire</a></h1>
+              </div>
+              <img src="http://pm1.narvii.com/6371/7636800e1cbc61bada7881715de051effcdbf42e_hq.jpg" alt="Grass"/>  
+              <h1><a href={{ url_for('grass')}}>Grass</a></h1> 
+              </div>
+              <img src="http://pm1.narvii.com/6371/a617f3c21b5b320a406ac2e7dbd7fb6678f78fa5_hq.jpg" alt="Water"/>
+                <h1><a href={{ url_for('water')}}>Water</a></h1>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </center>
+    </div>
+  </div>
+</body>
+
+
+</html>

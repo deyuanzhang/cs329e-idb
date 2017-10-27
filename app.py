@@ -24,7 +24,59 @@ app = Flask(__name__)
 @app.route('/')  # URL for function (default for home page)
 @app.route('/index')  # Secondary URL for function
 def index():
-    return render_template('about.html')  # located in templates/
+    return render_template('home.html')  # located in templates/
+
+@app.route('/pokemon')  
+def pokemon():
+    return render_template('pokemonSplash.html') 
+
+@app.route('/types')  
+def types():
+    return render_template('typesSplash.html') 
+
+@app.route('/moves')  
+def moves():
+    return render_template('movesSplash.html') 
+
+@app.route('/bio')  
+def bio():
+    return render_template('about.html') 
+
+@app.route('/bulbasaur')  
+def bulbasaur():
+    return render_template('bulbasaur.html') 
+
+@app.route('/charmander')  
+def charmander():
+    return render_template('charmander.html') 
+
+@app.route('/fire')  
+def fire():
+    return render_template('fire.html') 
+
+@app.route('/grass')  
+def grass():
+    return render_template('grass.html') 
+
+@app.route('/hydropump')  
+def hydropump():
+    return render_template('hydropump.html') 
+
+@app.route('/inferno')  
+def inferno():
+    return render_template('inferno.html') 
+
+@app.route('/seedbomb')  
+def seedbomb():
+    return render_template('seedbomb.html') 
+
+@app.route('/squirtle')  
+def squirtle():
+    return render_template('squirtle.html') 
+
+@app.route('/water')  
+def water():
+    return render_template('water.html') 
 
 @app.errorhandler(500)
 def server_error(e):
