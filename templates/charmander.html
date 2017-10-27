@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% include "template.html" %}
+  <title>Charmander</title>
+  <style>
+  table{
+    width: 13%;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  th, td{
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+  #paragraph {
+    font-style: italic;
+    width: 50%;
+  }
+  p {
+    font-size: 15px;
+  }
+  </style>
+</head>
+<body>
+  <center>
+    <h1><a href="https://pokemondb.net/pokedex/charmander" target="_blank">Charmander (#004)</a></h1>
+    <br>
+    <!--picture-->
+    <img src="https://img.pokemondb.net/artwork/charmander.jpg" alt="Charmander"/>
+    <br>
+    <h3>Type:</h3>
+    <p>Fire</p>
+    <h3>Species:</h3>
+    <p>Lizard Pokemon</p>
+    <h3>Region:</h3>
+    <p>Kanto</p>
+    <h3>Strongest Moves</h3>
+    <table>
+      <tr>
+        <th>Move</th>
+        <th>Power</th>
+      </tr>
+      <tr>
+        <td>Inferno</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Flame Thrower</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Flame Burst</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td>Slash</td>
+        <td>70</td>
+      </tr>
+    </table>
+    <h3>Description:</h3>
+    <div id="paragraph">
+      <p>Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.
+      </p>
+    </div>
+  </center>
+</body>
+</html>

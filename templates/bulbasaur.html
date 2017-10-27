@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% include "template.html" %}
+  <title>Bulbasaur</title>
+  <style>
+  table{
+    width: 13%;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  th, td{
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+  #paragraph {
+    font-style: italic;
+    width: 50%;
+  }
+  p {
+    font-size: 15px;
+  }
+  </style>
+</head>
+<body>
+  <center>
+    <h1><a href="https://pokemondb.net/pokedex/bulbasaur" target="_blank">Bulbasaur (#001)</a></h1>
+    <br>
+    <img src="https://img.pokemondb.net/artwork/bulbasaur.jpg" alt="Bulbasaur"/>
+    <br>
+    <h3>Type:</h3>
+    <p>Grass, Poison</p>
+    <h3>Species:</h3>
+    <p>Seed Pokemon</p>
+    <h3>Region:</h3>
+    <p>Kanto</p>
+    <h3>Strongest Moves</h3>
+    <table>
+      <tr>
+        <th>Move</th>
+        <th>Power</th>
+      </tr>
+      <tr>
+        <td>Double Edge</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>Seed Bomb</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Take Down</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Razor Leaf</td>
+        <td>55</td>
+      </tr>
+    </table>
+    <h3>Description:</h3>
+    <div id="paragraph">
+      <p>Strange seed was planted on its backc at birth. The plant sprouts and grows with this POKEMON.
+      </p>
+    </div>
+  </center>
+</body>
+</html>

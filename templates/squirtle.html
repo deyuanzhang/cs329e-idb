@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% include "template.html" %}
+  <title>Squirtle</title>
+  <style>
+  table{
+    width: 13%;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  th, td{
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+  #paragraph {
+    font-style: italic;
+    width: 50%;
+  }
+  p {
+    font-size: 15px;
+  }
+  </style>
+</head>
+<body>
+  <center>
+    <h1><a href="https://pokemondb.net/pokedex/squirtle" target="_blank">Squirtle (#007)</a></h1>
+    <br>
+    <img src="https://img.pokemondb.net/artwork/squirtle.jpg" alt="Squirtle"/>
+    <br>
+    <h3>Type:</h3>
+    <p>Water</p>
+    <h3>Species:</h3>
+    <p>Tiny Turtle Pokemon</p>
+    <h3>Region:</h3>
+    <p>Kanto</p>
+    <h3>Strongest Moves</h3>
+    <table>
+      <tr>
+        <th>Move</th>
+        <th>Power</th>
+      </tr>
+      <tr>
+        <td>Hydro Pump</td>
+        <td>110</td>
+      </tr>
+      <tr>
+        <td>Skull Bash</td>
+        <td>130</td>
+      </tr>
+      <tr>
+        <td>Aqua Tail</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Water Pulse</td>
+        <td>60</td>
+      </tr>
+    </table>
+    <h3>Description:</h3>
+    <div id="paragraph">
+      <p>After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.
+      </p>
+    </div>
+  </center>
+</body>
+</html>
