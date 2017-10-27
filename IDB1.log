@@ -1,0 +1,213 @@
+commit e0f2f652739f3eb576f33189e3ed7923249f2312
+Merge: 8ef2685 a57d2f7
+Author: Deyuan Zhang <deyuanzh@cs.utexas.edu>
+Date:   Thu Oct 26 19:26:35 2017 -0500
+
+    Merge conflict
+
+commit 8ef2685bea7895c1cf5f5d5ca1e2404a96859e84
+Merge: 95898ff 4986c87
+Author: Deyuan Zhang <deyuanzh@cs.utexas.edu>
+Date:   Thu Oct 26 19:15:59 2017 -0500
+
+    Merge fix
+
+commit a57d2f7f061c50442bce7de0438defd890af4d5a
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 19:11:14 2017 -0500
+
+    Delete old typesSplash.html
+
+commit de9461a1f635f3938bed1f4cfc9bc7e0bb8585c2
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 19:10:58 2017 -0500
+
+    Delete old movesSplash.html
+
+commit 4986c879a0354438b541f4510d2c4e44721557e7
+Author: freewilly95 <williamnguyen195@gmail.com>
+Date:   Thu Oct 26 19:08:26 2017 -0500
+
+    Bio additions
+
+commit 033f69624239c2aed3d2156b17e4ea7913f7f1d0
+Author: freewilly95 <williamnguyen195@gmail.com>
+Date:   Thu Oct 26 19:03:28 2017 -0500
+
+    Linkages done
+
+commit 95898ffdfa0ee8e5619069c74f3d01d9bd3feda1
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 18:37:20 2017 -0500
+
+    add title to about.html, make splash pages
+
+commit 858eb3a23d52361bef6d4092a21f1908c397fd97
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 18:17:49 2017 -0500
+
+    update stats and data on about.html
+
+commit 91bf0f5dfb365e3bcb15df6fcdf9af82158bbcd1
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 18:12:26 2017 -0500
+
+    updated about.html file
+
+commit 56f33457ff13a256275137f38c60fef093dfdad1
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 18:03:03 2017 -0500
+
+    fixed all pokemon, moves, and types files
+
+commit 74d9053acea23eeae92562d9cdee46ff0907bcab
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 17:52:19 2017 -0500
+
+    add moves & types html files
+
+commit 4a7c529344616332e81c1c669111de3b34d54a63
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 16:57:13 2017 -0500
+
+    changed names of move and type html files
+
+commit cf8226664e1cd30135872adfd9e33b5902eba5ac
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 16:42:59 2017 -0500
+
+    upload html files for pokemon
+
+commit 4dd299e7408b10ef22a9001f4f3fad6114483778
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 11:56:26 2017 -0500
+
+    add types and moves files
+
+commit 01adc7afa2409e943a8c2f6e95b5750e809b7ba2
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 11:52:48 2017 -0500
+
+    personal pages for each current pokemon being used
+
+commit 55e0e46063d37b7a3c19ae69515c60b770c94b9f
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 02:02:33 2017 -0500
+
+    Update model-moves.html
+    
+    Amount of blank lines in between code didn't match the other model-**.html files
+
+commit 532515c52620fb32faf33c8ce8f3407e368a09d2
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 01:59:58 2017 -0500
+
+    Add model-types.html to repo
+
+commit 3be95aad966f4c3ae44a9651a5c38a650f6ba717
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 01:58:56 2017 -0500
+
+    Add model-pokemon.html to repo
+
+commit b856de9a913a145babc2cb0ff882a1b55567cb81
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 01:58:09 2017 -0500
+
+    Add model-moves.html to repo
+
+commit a7b9a688057cb0d2e01e455401181c5673b43c48
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 01:57:28 2017 -0500
+
+    Delete model-moves.html
+    
+    Added to wrong location
+
+commit 7209c9e111d6164963fe7e18eea7e3a8d91d04ec
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Thu Oct 26 01:56:38 2017 -0500
+
+    Add model-moves.html
+
+commit 6f99d247649ccf001fabd7a954916bedfb86443c
+Author: deyuanzhang <deyuanzhang@utexas.edu>
+Date:   Thu Oct 26 00:54:54 2017 -0500
+
+    Attempt 502 fix
+
+commit 394a8963e53870c4bc205aef2e08e79a1ed36b58
+Merge: cd36da3 d91a093
+Author: deyuanzhang <deyuanzhang@utexas.edu>
+Date:   Wed Oct 25 23:43:04 2017 -0500
+
+    Merge branch 'master' into dev
+    Working flask backend.
+
+commit d91a093969d7cea9a28e36f2d34a9d5fe613597e
+Author: deyuanzhang <deyuanzhang@utexas.edu>
+Date:   Wed Oct 25 23:42:20 2017 -0500
+
+    Push to master
+
+commit cd36da3f53bb2e1f4ef557913258b7d012e17b05
+Author: Deyuan Zhang <deyuanzh@cs.utexas.edu>
+Date:   Tue Oct 24 21:32:16 2017 -0500
+
+    Fixed missing images
+
+commit d75ea4515fbfbf673a4847cb788b8a3b7dd0dad4
+Author: Deyuan Zhang <deyuanzh@cs.utexas.edu>
+Date:   Tue Oct 24 21:25:49 2017 -0500
+
+    Fixed template linking
+
+commit fd85ddf798a957ce608011571f5ee39b518da863
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Tue Oct 24 20:09:47 2017 -0500
+
+    temporary image for some members
+
+commit 6179a18481052b08be15e671e3155fd5d78bf7d5
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Tue Oct 24 19:20:23 2017 -0500
+
+    Delete about.html file
+    
+    Supposed to be added to Static folder
+
+commit 8dae384cbe9207eb8fb7e431413583cbd7c6459e
+Author: Andrea Mata <andreamata@utexas.edu>
+Date:   Tue Oct 24 19:18:27 2017 -0500
+
+    add about.html file
+
+commit 279936f9dfa5c515928ac657e10bd184d6dc0f58
+Author: Andrea Mata <andreama@cs.utexas.edu>
+Date:   Tue Oct 24 19:11:18 2017 -0500
+
+    add about.html file
+
+commit da3570c8aa765216ed1b46a9ef806dbb4248a641
+Author: andreamata <andreamata@utexas.edu>
+Date:   Tue Oct 24 18:58:17 2017 -0500
+
+    Added Andrea's photo for about.html
+
+commit 3dda763d2ce735fcabec79e9b764be4190e898b2
+Author: alexzou19 <alexzou19@gmail.com>
+Date:   Tue Oct 24 18:36:12 2017 -0500
+
+    Alex Picture for Bio
+
+commit 247aadd7a21f33fe716258f5003dabdd47cb6b37
+Author: Deyuan Zhang <deyuanzh@cs.utexas.edu>
+Date:   Sun Oct 22 16:33:47 2017 -0500
+
+    Add static pages
+
+commit 2dba1011bc0c7cd2eb6e75099a438e39f9020848
+Author: Deyuan Zhang <deyuanzh@cs.utexas.edu>
+Date:   Sun Oct 22 15:32:13 2017 -0500
+
+    Initial commit
