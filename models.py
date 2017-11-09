@@ -25,12 +25,20 @@ from flask_sqlalchemy import SQLAlchemy
 Base = declarative_base()
 
 class Pokemon(Base):
-	__tablename__ = 'pokemon'
+	__tablename__ = 'pokemon5'
 	
-	title = Column(String(80), nullable = False)
-	id = Column(Integer, primary_key = True)
+	name = Column(String(15), nullable = False, primary_key = True)
+	type = Column(String(10000), nullable = False)
+	move = Column(String(10000), nullable = False)
+	attack = Column(String(15), nullable = False)
+	defense = Column(String(15), nullable = False)
+	spdefense = Column(String(15), nullable = False)
+	specialattack = Column(String(15), nullable = False)
+	image = Column(String(150), nullable = False)
 
-SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:group8books@localhost/bookdb')
+        
+
+SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:FreeWilly@localhost/pokemon')
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
 
