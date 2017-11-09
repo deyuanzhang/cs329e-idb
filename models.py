@@ -30,20 +30,20 @@ class Pokemon(Base):
 	name = Column(String(20), nullable = False, primary_key = True)
 	type = Column(String(20), nullable = False)
 	move = Column(String(5000), nullable = False)
-	attack = Column(String(20), nullable = False)
-	defense = Column(String(20), nullable = False)
-	spdefense = Column(String(20), nullable = False)
-	specialattack = Column(String(20), nullable = False)
+	attack = Column(Integer, nullable = False)
+	defense = Column(Integer, nullable = False)
+	spdefense = Column(Integer, nullable = False)
+	specialattack = Column(Integer, nullable = False)
 	image = Column(String(500), nullable = False)
 
 class Move(Base):
 	__tablename__ = 'move'
 	
 	name = Column(String(30), nullable = False, primary_key = True)
-	power = Column(String(30))
-	accuracy = Column(String(30))
+	power = Column(Integer)
+	accuracy = Column(Integer)
 	type = Column(String(30))
-	pp = Column(String(30))
+	pp = Column(Integer)
 
 class Type(Base):
 	__tablename__ = 'type'
