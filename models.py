@@ -48,11 +48,11 @@ class Move(Base):
 class Type(Base):
 	__tablename__ = 'type'
 	
-	name = Column(String(10), nullable = False, primary_key = True)
-	half_to = Column(String())
-	half_from = Column(String())
-	double_to = Column(String())
-	double_from = Column(String())
+	name = Column(String(8), nullable = False, primary_key = True)
+	half_to = Column(String(63))
+	half_from = Column(String(63))
+	double_to = Column(String(63))
+	double_from = Column(String(63))
 	
 
 SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:FreeWilly@localhost/pokemon')
