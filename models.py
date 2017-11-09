@@ -25,18 +25,35 @@ from flask_sqlalchemy import SQLAlchemy
 Base = declarative_base()
 
 class Pokemon(Base):
-	__tablename__ = 'pokemon5'
+	__tablename__ = 'pokemonname'
 	
-	name = Column(String(15), nullable = False, primary_key = True)
-	type = Column(String(10000), nullable = False)
-	move = Column(String(10000), nullable = False)
-	attack = Column(String(15), nullable = False)
-	defense = Column(String(15), nullable = False)
-	spdefense = Column(String(15), nullable = False)
-	specialattack = Column(String(15), nullable = False)
-	image = Column(String(150), nullable = False)
+	name = Column(String(20), nullable = False, primary_key = True)
+	type = Column(String(20), nullable = False)
+	move = Column(String(5000), nullable = False)
+	attack = Column(String(20), nullable = False)
+	defense = Column(String(20), nullable = False)
+	spdefense = Column(String(20), nullable = False)
+	specialattack = Column(String(20), nullable = False)
+	image = Column(String(500), nullable = False)
 
-        
+class Move(Base):
+	__tablename__ = 'move'
+	
+	name = Column(String(30), nullable = False, primary_key = True)
+	power = Column(String(30))
+	accuracy = Column(String(30))
+	type = Column(String(30))
+	pp = Column(String(30))
+
+class Type(Base):
+	__tablename__ = 'type'
+	
+	name = Column(String(10), nullable = False, primary_key = True)
+	half_to = Column(String())
+	half_from = Column(String())
+	double_to = Column(String())
+	double_from = Column(String())
+	
 
 SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:FreeWilly@localhost/pokemon')
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
