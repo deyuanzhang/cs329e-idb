@@ -23,7 +23,7 @@
               {% for t in type_all %}
                 <tr>
                   <td>
-                    <a href="/types/{{t.name}}">{{t.name}}</a>
+                    <a href="/types/{{t.name}}">{{t.name | capitalize}}</a>
                   </td>
                 </tr>
               {% endfor %}

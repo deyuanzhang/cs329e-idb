@@ -21,7 +21,7 @@
               {% for m in move_all %}
                 <tr>
                   <td>
-                    <a href="/moves/{{m.name}}">{{m.name}}</a>
+                    <a href="/moves/{{m.name}}">{{m.name | capitalize}}</a>
                   </td>
                 </tr>
               {% endfor %}

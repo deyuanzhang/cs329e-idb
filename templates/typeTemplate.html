@@ -27,38 +27,62 @@
 </head>
 <body>
   <center>
-    <h1>{{type.name}}</h1>
+    <h1>{{type.name | capitalize}}</h1>
     <h3>Half Damage To:</h3>
     <table>
-      {% for h in half_to %}
+      {% if half_to == [''] %}
         <tr>
-          <td>{<a href="/types/{{h}}">{{h}}</a></td>
+          <td><p>None</p></td>
         </tr>
-      {% endfor %}
+      {% else %}
+        {% for h in half_to %}
+          <tr>
+            <td><a href="/types/{{h}}">{{h | capitalize}}</a></td>
+          </tr>
+        {% endfor %}
+      {% endif %}
     </table>
     <h3>Half Damage From:</h3>
     <table>
-      {% for h in half_from %}
+      {% if half_from == [''] %}
         <tr>
-          <td><a href="/types/{{h}}">{{h}}</td>
+          <td><p>None</p></td>
         </tr>
-      {% endfor %}
+      {% else %}
+        {% for h in half_from %}
+          <tr>
+            <td><a href="/types/{{h}}">{{h | capitalize}}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
     </table>
     <h3>Double Damage To:</h3>
     <table>
-      {% for d in double_to %}
+      {% if double_to == [''] %}
         <tr>
-          <td><a href="/types/{{d}}">{{d}}</td>
+          <td><p>None</p></td>
         </tr>
-      {% endfor %}
+      {% else %}
+        {% for d in double_to %}
+          <tr>
+            <td><a href="/types/{{d}}">{{d | capitalize}}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
     </table>
     <h3>Double Damage From:</h3>
     <table>
-      {% for d in double_from %}
+      {% if double_from == [''] %}
         <tr>
-          <td><a href="/types/{{d}}">{{d}}</td>
+          <td><p>None</p></td>
         </tr>
-      {% endfor %}
+      {% else %}
+        {% for d in double_from %}
+          <tr>
+            <td><a href="/types/{{d}}">{{d | capitalize}}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
     </table>
   </center>
 </body>

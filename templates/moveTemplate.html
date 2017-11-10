@@ -27,7 +27,7 @@
 </head>
 <body>
   <center>
-    <h1>{{move.name}}</h1>
+    <h1>{{move.name | capitalize}}</h1>
     <table>
       <th>Power</th>
       <tr>
@@ -39,7 +39,7 @@
       </tr>
       <th>Type</th>
       <tr>
-        <td><a href="/types/{{type}}">{{type}}</a></td>
+        <td><a href="/types/{{type}}">{{type | capitalize}}</a></td>
       </tr>
       <th>Power Points</th>
       <tr>
