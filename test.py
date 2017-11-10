@@ -1,6 +1,6 @@
 import os
 import unittest
-from models import Pokemon, Type, Move, engine
+from models import Base, Pokemon, Type, Move, engine
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -11,39 +11,39 @@ session = DBSession()
 
 class DBTestCases(unittest.TestCase):
     def test_source_insert_1(self):
-        s = Book(id='1', title = 'TESTONE')
+        s = Pokemon(name = "pikachu", type = "electric", move = "bash", attack = "100", defense = "50", spdefense = "50", specialattack = "50", image = "www.pikachu.com")
         session.add(s)
         session.commit()
 
 
-        r = session.query(Book).filter_by(id = '1').one()
-        self.assertEqual(str(r.id), '1')
+        r = session.query(Pokemon).filter_by(name = "pikachu").one()
+        self.assertEqual(str(r.type), 'electric')
 
-        session.query(Book).filter_by(id = '1').delete()
+        session.query(Pokemon).filter_by(name = "pikachu").delete()
         session.commit()
 
     def test_source_insert_2(self):
-        s = Book(id='2', title = 'TESTTWO')
+        s = Pokemon(name = "william", type = "unknown", move = "rest", attack = "100", defense = "100", spdefense = "100", specialattack = "100", image = "www.aol.com")
         session.add(s)
         session.commit()
 
 
-        r = session.query(Book).filter_by(id = '2').one()
-        self.assertEqual(str(r.id), '2')
+        r = session.query(Pokemon).filter_by(name = "william").one()
+        self.assertEqual(str(r.spdefense), '100')
 
-        session.query(Book).filter_by(id = '2').delete()
+        session.query(Pokemon).filter_by(name = "william").delete()
         session.commit()
 
     def test_source_insert_3(self):
-        s = Type(name = "scratch", power = "40", accuracy = "100", type ="normal", pp = "35" )
+        s = Pokemon(name = "deyuan", type = "str8_fire", move = "ancient_power", attack = "101", defense = "101", spdefense = "101", specialattack = "101", image = "www.google.com")
         session.add(s)
         session.commit()
 
 
-        r = session.query(Book).filter_by(name = "scratch").one()
-        self.assertEqual(str(r.id), 'scratch')
+        r = session.query(Pokemon).filter_by(name = "deyuan").one()
+        self.assertEqual(str(r.image), 'www.google.com')
 
-        session.query(Book).filter_by(name = 'scratch').delete()
+        session.query(Pokemon).filter_by(name = "deyuan").delete()
         session.commit()
 
     def test_source_insert_4(self):
