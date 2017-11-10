@@ -59,7 +59,7 @@ class DBTestCases(unittest.TestCase):
         session.commit()
 
     def test_source_insert_5(self):
-        s = Move(name = "rest", power = "", accuracy = "", type = "psychic", pp = "10")
+        s = Move(name = "rest", power = "10", accuracy = "10", type = "psychic", pp = "10")
         session.add(s)
         session.commit()
 
