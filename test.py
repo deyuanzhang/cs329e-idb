@@ -47,39 +47,39 @@ class DBTestCases(unittest.TestCase):
         session.commit()
 
     def test_source_insert_4(self):
-        s = Type(name = "scratch", power = "40", accuracy = "100", type ="normal", pp = "35" )
+        s = Move(name = "scratch", power = "40", accuracy = "100", type ="normal", pp = "35" )
         session.add(s)
         session.commit()
 
 
-        r = session.query(Book).filter_by(name = "scratch").one()
+        r = session.query(Move).filter_by(name = "scratch").one()
         self.assertEqual(str(r.id), 'scratch')
 
-        session.query(Book).filter_by(name = 'scratch').delete()
+        session.query(Move).filter_by(name = 'scratch').delete()
         session.commit()
 
     def test_source_insert_5(self):
-        s = Type(name = "rest", power = "", accuracy = "", type = "psychic", pp = "10")
+        s = Move(name = "rest", power = "", accuracy = "", type = "psychic", pp = "10")
         session.add(s)
         session.commit()
 
 
-        r = session.query(Author).filter_by(name = "rest").one()
+        r = session.query(Move).filter_by(name = "rest").one()
         self.assertEqual(str(r.id), 'rest')
 
-        session.query(Author).filter_by(name = "rest").delete()
+        session.query(Move).filter_by(name = "rest").delete()
         session.commit()
 
     def test_source_insert_6(self):
-        s = Type(name = 'ice-punch', power = "75", accuracy = "100", type = "ice", pp = "15")
+        s = Move(name = 'ice-punch', power = "75", accuracy = "100", type = "ice", pp = "15")
         session.add(s)
         session.commit()
 
 
-        r = session.query(Author).filter_by(name = 'ice-punch').one()
+        r = session.query(Move).filter_by(name = 'ice-punch').one()
         self.assertEqual(str(r.id), 'ice-punch')
 
-        session.query(Author).filter_by(name = 'ice-punch').delete()
+        session.query(Move).filter_by(name = 'ice-punch').delete()
         session.commit()
 
     def test_source_insert_7(self):
@@ -88,10 +88,10 @@ class DBTestCases(unittest.TestCase):
         session.commit()
 
 
-        r = session.query(Publisher).filter_by(name = 'ghost').one()
+        r = session.query(Type).filter_by(name = 'ghost').one()
         self.assertEqual(str(r.id), 'ghost')
 
-        session.query(Publisher).filter_by(name = 'ghost').delete()
+        session.query(Type).filter_by(name = 'ghost').delete()
         session.commit()
 
     def test_source_insert_8(self):
@@ -100,10 +100,10 @@ class DBTestCases(unittest.TestCase):
         session.commit()
 
 
-        r = session.query(Publisher).filter_by(name = 'steel').one()
+        r = session.query(Type).filter_by(name = 'steel').one()
         self.assertEqual(str(r.id), 'steel')
 
-        session.query(Publisher).filter_by(name = 'steel').delete()
+        session.query(Type).filter_by(name = 'steel').delete()
         session.commit()
 
     def test_source_insert_9(self):
@@ -112,10 +112,10 @@ class DBTestCases(unittest.TestCase):
         session.commit()
 
 
-        r = session.query(Publisher).filter_by(name = 'ice').one()
+        r = session.query(Type).filter_by(name = 'ice').one()
         self.assertEqual(str(r.id), 'ice')
 
-        session.query(Publisher).filter_by(name = 'ice').delete()
+        session.query(Type).filter_by(name = 'ice').delete()
         session.commit()
 
 
