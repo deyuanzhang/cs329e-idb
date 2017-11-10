@@ -20,9 +20,9 @@ from flask import render_template, request, url_for
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.models import Base, Pokemon, Type, Move, engine
-from app.moveFilter import gen1_moves
-from app.create_db import create_pokemon, session
+from models import Base, Pokemon, Type, Move, engine
+from moveFilter import gen1_moves
+from create_db import create_pokemon, session
 
 
 app = Flask(__name__)
