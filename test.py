@@ -1,6 +1,6 @@
 import os
 import unittest
-from models import Base, Book, Author, Publisher, engine
+from models import Pokemon, Type, Move, engine
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -53,7 +53,7 @@ class DBTestCases(unittest.TestCase):
 
 
         r = session.query(Move).filter_by(name = "scratch").one()
-        self.assertEqual(str(r.id), 'scratch')
+        self.assertEqual(str(r.name), 'scratch')
 
         session.query(Move).filter_by(name = 'scratch').delete()
         session.commit()
@@ -65,7 +65,7 @@ class DBTestCases(unittest.TestCase):
 
 
         r = session.query(Move).filter_by(name = "rest").one()
-        self.assertEqual(str(r.id), 'rest')
+        self.assertEqual(str(r.name), 'rest')
 
         session.query(Move).filter_by(name = "rest").delete()
         session.commit()
@@ -77,7 +77,7 @@ class DBTestCases(unittest.TestCase):
 
 
         r = session.query(Move).filter_by(name = 'ice-punch').one()
-        self.assertEqual(str(r.id), 'ice-punch')
+        self.assertEqual(str(r.name), 'ice-punch')
 
         session.query(Move).filter_by(name = 'ice-punch').delete()
         session.commit()
@@ -89,7 +89,7 @@ class DBTestCases(unittest.TestCase):
 
 
         r = session.query(Type).filter_by(name = 'ghost').one()
-        self.assertEqual(str(r.id), 'ghost')
+        self.assertEqual(str(r.name), 'ghost')
 
         session.query(Type).filter_by(name = 'ghost').delete()
         session.commit()
@@ -101,7 +101,7 @@ class DBTestCases(unittest.TestCase):
 
 
         r = session.query(Type).filter_by(name = 'steel').one()
-        self.assertEqual(str(r.id), 'steel')
+        self.assertEqual(str(r.name), 'steel')
 
         session.query(Type).filter_by(name = 'steel').delete()
         session.commit()
@@ -113,7 +113,7 @@ class DBTestCases(unittest.TestCase):
 
 
         r = session.query(Type).filter_by(name = 'ice').one()
-        self.assertEqual(str(r.id), 'ice')
+        self.assertEqual(str(r.name), 'ice')
 
         session.query(Type).filter_by(name = 'ice').delete()
         session.commit()
