@@ -21,7 +21,7 @@
               {% for p in pokemon_all %}
                 <tr>
                   <td>
-                    <a href="/pokemon/{{p.name}}">{{p.name}}</a>
+                    <a href="/pokemon/{{p.name}}">{{p.name |capitalize}}</a>
                   </td>
                 </tr>
               {% endfor %}

@@ -27,7 +27,7 @@
 </head>
 <body>
   <center>
-    <h1>{{pokemon.name}}</h1>
+    <h1>{{pokemon.name | capitalize}}</h1>
     <br>
     <img src={{pokemon.image}} alt={{pokemon.name}}/>
     <br>
@@ -35,7 +35,7 @@
     <table>
       {% for t in types %}
         <tr>
-          <td><a href="/types/{{t}}">{{t}}</a></td>
+          <td><a href="/types/{{t}}">{{t | capitalize}}</a></td>
         </tr>
         {% endfor %}
     </table>
@@ -43,7 +43,7 @@
     <table>
       {% for m in moves %}
         <tr>
-          <td><a href="/moves/{{m}}">{{m}}</a></td>
+          <td><a href="/moves/{{m}}">{{m | capitalize}}</a></td>
         </tr>
       {% endfor %}
     </table>
