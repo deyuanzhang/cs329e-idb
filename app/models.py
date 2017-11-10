@@ -15,7 +15,6 @@ from sqlalchemy import create_engine
 
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 
 
 # for creating an instance of the declarative_base class
