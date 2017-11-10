@@ -5,6 +5,27 @@ pokemon_dict = {}
 types_dict = {}
 moves_dict = {}
 
+gen1_moves = []
+
+def get_moves(json_path) :
+    request_url = "https://pokeapi.co/api/v2/move/?limit=165"
+    all_moves = requests.get(request_url).json()
+
+    for next_move in all_moves["results"]:
+        moves_dict[next_move["name"]] = {}
+        request_move = next_move["url"]
+        move_attributes = requests.get(request_move).json()
+        if move_attributes["generation"]["name"] == "generation-i":
+            gen1_moves.append(next_move["name"])
+            print(next_move["name"])
+        moves_dict[next_move["name"]]["power"] = move_attributes["power"]
+        moves_dict[next_move["name"]]["accuracy"] = move_attributes["accuracy"]
+        moves_dict[next_move["name"]]["type"] = move_attributes["type"]["name"]
+        moves_dict[next_move["name"]]["pp"] = move_attributes["pp"]
+
+    with open(json_path, "w") as json_file:
+        json.dump(moves_dict, json_file)
+
 def get_pokemon(json_path) :
     request_url = "https://pokeapi.co/api/v2/pokemon/?limit=151"
     all_pokemon = requests.get(request_url).json()
@@ -18,7 +39,8 @@ def get_pokemon(json_path) :
             pokemon_dict[pokemon["name"]]["type"].append(pokemon_type["type"]["name"])
         pokemon_dict[pokemon["name"]]["moves"] = []
         for move in pokemon_attributes["moves"]:
-            pokemon_dict[pokemon["name"]]["moves"].append(move["move"]["name"])
+            if move["move"]["name"] in gen1_moves:
+                pokemon_dict[pokemon["name"]]["moves"].append(move["move"]["name"])
         pokemon_dict[pokemon["name"]]["weight"] = pokemon_attributes["weight"]
         pokemon_dict[pokemon["name"]]["height"] = pokemon_attributes["height"]
         for stat in pokemon_attributes["stats"]:
@@ -63,24 +85,8 @@ def get_types(json_path) :
         json.dump(types_dict, json_file)
 
 
-def get_moves(json_path) :
-    request_url = "https://pokeapi.co/api/v2/move/?limit=165"
-    all_moves = requests.get(request_url).json()
-
-    for next_move in all_moves["results"]:
-        moves_dict[next_move["name"]] = {}
-        request_move = next_move["url"]
-        move_attributes = requests.get(request_move).json()
-        moves_dict[next_move["name"]]["power"] = move_attributes["power"]
-        moves_dict[next_move["name"]]["accuracy"] = move_attributes["accuracy"]
-        moves_dict[next_move["name"]]["type"] = move_attributes["type"]["name"]
-        moves_dict[next_move["name"]]["pp"] = move_attributes["pp"]
-
-    with open(json_path, "w") as json_file:
-        json.dump(moves_dict, json_file)
-
 
 if __name__ == "__main__" :
-    #get_pokemon("pokemon.json")
+    get_moves("pokemon_moves.json")
+    get_pokemon("pokemon.json")
     #get_types("pokemon_types.json")
-    #get_moves("pokemon_moves.json")

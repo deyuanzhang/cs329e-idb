@@ -10,6 +10,8 @@ from models import Pokemon
 from models import Move
 from models import Type
 from sqlalchemy.orm import sessionmaker
+
+print('starting')
 # bind the engine to the base class. This makes the connection
 # between our class definitions and the corresponding tables 
 # within our database
@@ -40,6 +42,7 @@ def create_pokemon():
     pokemon = load_json('pokemon.json')
 
     for next_pokemon in pokemon:
+        print("working pokemon" + next_pokemon)
         name = next_pokemon
         type = pokemon[next_pokemon]['type']
         move = pokemon[next_pokemon]['moves']
@@ -60,6 +63,7 @@ def create_move():
     move = load_json('pokemon_moves.json')
 
     for next_move in move:
+        print(next_move)
         name = next_move
         power = move[next_move]['power']
         accuracy = move[next_move]['accuracy']
@@ -76,6 +80,7 @@ def create_type():
     type = load_json('pokemon_types.json')
 
     for next_type in type:
+        print(next_type)
         name = next_type
         half_to = type[next_type]['half_to']
         half_from = type[next_type]['half_from']
@@ -90,7 +95,6 @@ def create_type():
 
 
 
-
-create_pokemon()		
+create_pokemon()	
 create_move()
 create_type()
