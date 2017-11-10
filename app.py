@@ -16,7 +16,7 @@
 import logging
 
 from flask import Flask
-from flask import render_template # Import render_template function
+from flask import render_template, request, url_for
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
