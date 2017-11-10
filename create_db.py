@@ -9,6 +9,7 @@ from models import Base
 from models import Pokemon
 from models import Move
 from models import Type
+from moveFilter import gen1_moves
 from sqlalchemy.orm import sessionmaker
 
 print('starting')

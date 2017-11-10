@@ -21,6 +21,7 @@ from flask import render_template, request, url_for
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, Pokemon, Type, Move, engine
+from moveFilter import gen1_moves
 from create_db import create_pokemon, session
 
 
@@ -41,7 +42,11 @@ def pokemon(pokemon_name):
     else:
         pokemon_samp = session.query(Pokemon).filter_by(name = pokemon_name)
         types = pokemon_samp[0].type[1:-1].split(',')
-        moves = pokemon_samp[0].move[1:-1].split(',')
+        temp_moves = pokemon_samp[0].move[1:-1].split(',')
+        moves = []
+        for m in temp_moves:
+            if m in gen1_moves:
+                moves.append(m)
         attack = pokemon_samp[0].attack
         defense = pokemon_samp[0].defense
         spattack = pokemon_samp[0].specialattack
