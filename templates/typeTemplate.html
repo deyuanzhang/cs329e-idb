@@ -28,6 +28,9 @@
 <body>
   <center>
     <h1>{{type.name | capitalize}}</h1>
+    <br>
+    <img src="../static/images/{{type.name | capitalize}}.png" alt={{type.name}}/>
+    <br>
     <h3>Half Damage To:</h3>
     <table>
       {% if half_to == [''] %}
