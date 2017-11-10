@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% include "template.html" %}
+  <title>{{move.name}}</title>
+  <style>
+  table{
+    width: 13%;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  th, td{
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+  #paragraph {
+    font-style: italic;
+    width: 50%;
+  }
+  p {
+    font-size: 15px;
+  }
+  </style>
+</head>
+<body>
+  <center>
+    <h1>{{move.name}}</h1>
+    <table>
+      <th>Power</th>
+      <tr>
+        <td>{{power}}</td>
+      </tr>
+      <th>Accuracy</th>
+      <tr>
+        <td>{{accuracy}}</td>
+      </tr>
+      <th>Type</th>
+      <tr>
+        <td><a href="/types/{{type}}">{{type}}</a></td>
+      </tr>
+      <th>Power Points</th>
+      <tr>
+        <td>{{pp}}</td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>

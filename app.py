@@ -18,6 +18,12 @@ import logging
 from flask import Flask
 from flask import render_template # Import render_template function
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from models import Base, Pokemon, Type, Move, engine
+from create_db import create_pokemon, session
+
+
 app = Flask(__name__)
 
 
@@ -26,57 +32,54 @@ app = Flask(__name__)
 def index():
     return render_template('home.html')  # located in templates/
 
-@app.route('/pokemon')  
-def pokemon():
-    return render_template('pokemonSplash.html') 
+@app.route('/pokemon', defaults ={'pokemon_name':None})
+@app.route('/pokemon/<pokemon_name>')
+def pokemon(pokemon_name):
+    if pokemon_name == None:
+        pokemon_all = session.query(Pokemon).all()
+        return render_template('pokemonSplash.html', pokemon_all = pokemon_all)
+    else:
+        pokemon_samp = session.query(Pokemon).filter_by(name = pokemon_name)
+        types = pokemon_samp[0].type[1:-1].split(',')
+        moves = pokemon_samp[0].move[1:-1].split(',')
+        attack = pokemon_samp[0].attack
+        defense = pokemon_samp[0].defense
+        spattack = pokemon_samp[0].specialattack
+        spdefense = pokemon_samp[0].spdefense
+        return render_template('pokemonTemplate.html', pokemon=pokemon_samp[0], types = types, moves=moves, attack=attack, defense=defense, spattack=spattack, spdefense=spdefense)  # located in templates/
 
-@app.route('/types')  
-def types():
-    return render_template('typesSplash.html') 
+@app.route('/types', defaults ={'type_name':None})
+@app.route('/types/<type_name>')
+def types(type_name):
+    if type_name == None:
+        type_all = session.query(Type).all()
+        return render_template('typesSplash.html', type_all = type_all)
+    else:
+        type_samp = session.query(Type).filter_by(name = type_name)
+        half_to = type_samp[0].half_to[1:-1].split(',')
+        half_from = type_samp[0].half_from[1:-1].split(',')
+        double_to = type_samp[0].double_to[1:-1].split(',')
+        double_from = type_samp[0].double_from[1:-1].split(',')
+        return render_template('typeTemplate.html', type=type_samp[0], half_to=half_to, half_from = half_from, double_to = double_to, double_from = double_from)  # located in templates/
 
-@app.route('/moves')  
-def moves():
-    return render_template('movesSplash.html') 
+@app.route('/moves', defaults ={'move_name':None})
+@app.route('/moves/<move_name>')
+def moves(move_name):
+    if move_name == None:
+        move_all = session.query(Move).all()
+        return render_template('movesSplash.html', move_all = move_all)
+    else:
+        move_samp = session.query(Move).filter_by(name = move_name)
+        power = move_samp[0].power
+        accuracy = move_samp[0].accuracy
+        type = move_samp[0].type
+        pp = move_samp[0].pp
+        return render_template('moveTemplate.html', move=move_samp[0], type=type, accuracy=accuracy, pp=pp, power=power)  # located in templates/
 
-@app.route('/bio')  
+
+@app.route('/bio')
 def bio():
-    return render_template('about.html') 
-
-@app.route('/bulbasaur')  
-def bulbasaur():
-    return render_template('bulbasaur.html') 
-
-@app.route('/charmander')  
-def charmander():
-    return render_template('charmander.html') 
-
-@app.route('/fire')  
-def fire():
-    return render_template('fire.html') 
-
-@app.route('/grass')  
-def grass():
-    return render_template('grass.html') 
-
-@app.route('/hydropump')  
-def hydropump():
-    return render_template('hydropump.html') 
-
-@app.route('/inferno')  
-def inferno():
-    return render_template('inferno.html') 
-
-@app.route('/seedbomb')  
-def seedbomb():
-    return render_template('seedbomb.html') 
-
-@app.route('/squirtle')  
-def squirtle():
-    return render_template('squirtle.html') 
-
-@app.route('/water')  
-def water():
-    return render_template('water.html') 
+    return render_template('about.html')
 
 @app.errorhandler(500)
 def server_error(e):

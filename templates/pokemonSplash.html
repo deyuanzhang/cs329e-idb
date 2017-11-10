@@ -17,17 +17,15 @@
           <div class="panel panel-default">
             <div class="panel-heading"><h2>Meet the pokemon!</h2></div>
 
-            <div class="panel-body">
-              <img src="https://img.pokemondb.net/artwork/squirtle.jpg" alt="Squirtle"/>
-                <h1><a href={{ url_for('squirtle')}}>Squirtle (#007)</a></h1>
-              
-              <img src="https://img.pokemondb.net/artwork/charmander.jpg" alt="Charmander"/>
-                <h1><a href={{ url_for('charmander')}}>Charmander (#004)</a></h1>
-          
-              <img src="https://img.pokemondb.net/artwork/bulbasaur.jpg" alt="Bulbasaur"/>
-                <h1><a href={{ url_for('bulbasaur')}}>Bulbasaur (#001)</a></h1>
-          
-            </div>
+            <table>
+              {% for p in pokemon_all %}
+                <tr>
+                  <td>
+                    <a href="/pokemon/{{p.name}}">{{p.name}}</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
             </div>
 
           </div>

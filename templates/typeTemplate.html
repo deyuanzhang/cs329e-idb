@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% include "template.html" %}
+  <title>{{type.name}}</title>
+  <style>
+  table{
+    width: 13%;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  th, td{
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+  }
+  #paragraph {
+    font-style: italic;
+    width: 50%;
+  }
+  p {
+    font-size: 15px;
+  }
+  </style>
+</head>
+<body>
+  <center>
+    <h1>{{type.name}}</h1>
+    <h3>Half Damage To:</h3>
+    <table>
+      {% for h in half_to %}
+        <tr>
+          <td>{{h}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <h3>Half Damage From:</h3>
+    <table>
+      {% for h in half_from %}
+        <tr>
+          <td>{{h}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <h3>Double Damage To:</h3>
+    <table>
+      {% for d in double_to %}
+        <tr>
+          <td>{{d}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <h3>Double Damage From:</h3>
+    <table>
+      {% for d in double_from %}
+        <tr>
+          <td>{{d}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </center>
+</body>
+</html>
