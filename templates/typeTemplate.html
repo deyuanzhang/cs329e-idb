@@ -32,7 +32,7 @@
     <table>
       {% for h in half_to %}
         <tr>
-          <td>{{h}}</td>
+          <td>{<a href="/types/{{h}}">{{h}}</a></td>
         </tr>
       {% endfor %}
     </table>
@@ -40,7 +40,7 @@
     <table>
       {% for h in half_from %}
         <tr>
-          <td>{{h}}</td>
+          <td><a href="/types/{{h}}">{{h}}</td>
         </tr>
       {% endfor %}
     </table>
@@ -48,7 +48,7 @@
     <table>
       {% for d in double_to %}
         <tr>
-          <td>{{d}}</td>
+          <td><a href="/types/{{d}}">{{d}}</td>
         </tr>
       {% endfor %}
     </table>
@@ -56,7 +56,7 @@
     <table>
       {% for d in double_from %}
         <tr>
-          <td>{{d}}</td>
+          <td><a href="/types/{{d}}">{{d}}</td>
         </tr>
       {% endfor %}
     </table>

@@ -55,7 +55,7 @@ class Type(Base):
 	double_from = Column(String(63))
 	
 
-SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:FreeWilly@localhost/pokemon')
+SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:password@localhost/pokedb')
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
 
