@@ -7,6 +7,8 @@ def load_json(filename):
 
     return jsn
 
+#get all the moves present in generation 1 only 
+#api scraper limits to 300 a day, runs out quickly
 def get_gen1_move():
     move = load_json('pokemon_moves.json')
     gen1_moves = [] 

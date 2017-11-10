@@ -33,6 +33,7 @@ app = Flask(__name__)
 def index():
     return render_template('home.html')  # located in templates/
 
+#route depending on if pokemon name specified in url
 @app.route('/pokemon', defaults ={'pokemon_name':None})
 @app.route('/pokemon/<pokemon_name>')
 def pokemon(pokemon_name):
@@ -53,6 +54,7 @@ def pokemon(pokemon_name):
         spdefense = pokemon_samp[0].spdefense
         return render_template('pokemonTemplate.html', pokemon=pokemon_samp[0], types = types, moves=moves, attack=attack, defense=defense, spattack=spattack, spdefense=spdefense)  # located in templates/
 
+#route depending on if type name specified in url
 @app.route('/types', defaults ={'type_name':None})
 @app.route('/types/<type_name>')
 def types(type_name):
@@ -67,6 +69,7 @@ def types(type_name):
         double_from = type_samp[0].double_from[1:-1].split(',')
         return render_template('typeTemplate.html', type=type_samp[0], half_to=half_to, half_from = half_from, double_to = double_to, double_from = double_from)  # located in templates/
 
+#route depending on if move name specified in url
 @app.route('/moves', defaults ={'move_name':None})
 @app.route('/moves/<move_name>')
 def moves(move_name):
