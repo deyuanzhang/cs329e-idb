@@ -4,3 +4,12 @@ entrypoint: gunicorn -b :$PORT app:app
 
 runtime_config:
   python_version: 3
+
+env_variables:
+    # Replace user, password, database, and instance connection name with the values obtained
+    # when configuring your Cloud SQL instance.
+    SQLALCHEMY_DATABASE_URI: >-
+      postgresql+psycopg2://deyuan:password@/pokemondatabase?host=/cloudsql/pokemon-idb:us-central1:pokemondatabase
+
+beta_settings:
+    cloud_sql_instances: pokemon-idb:us-central1:pokemondatabase
