@@ -4,6 +4,61 @@
 <head>
   <meta charset="utf-8">
   {% include "template.html" %}
+    <script type="text/javascript">
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("pokemonSplash");
+      switching = true;
+      dir = "asc"; 
+      while (switching) {
+        switching = false;
+        rows = table.getElementsByTagName("TR");
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (dir == "asc") {
+            if (x.innerHTML > y.innerHTML) {
+              shouldSwitch= true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML < y.innerHTML {
+              shouldSwitch= true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++; 
+        } else {
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+    function tableSearch() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("authorsTable");
+      tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+          } 
+        }
+    }
+  </script>
 </head>
 
 <body>
@@ -11,21 +66,35 @@
     <div class="jumbotron">
       <h1>Our Pokemon</h1>
     </div>
+    <div class="input-group">
+          <input type="text" id = "myInput" onkeyup="tableSearch()" class="form-control" placeholder="Search by pokemon name...">
+    </div>
     <div class="row">
       <center>
         <div class="panel-group">
           <div class="panel panel-default">
             <div class="panel-heading"><h2>Meet the pokemon!</h2></div>
 
-            <table>
+            <table style = "margin-top: 48px" id = "pokemonSplash" BORDER = "2">
+              <tr>
+                <th onclick = "sortTable(0)">Pokemon Name</th>
+                <th onclick = "sortTable(1)">Attack</th>
+                <th onclick = "sortTable(2)">Defense</th>
+                <th onclick = "sortTable(3)">Special Attack</th>
+                <th onclick = "sortTable(4)">Special Defense</th>
+              </tr>
               {% for p in pokemon_all %}
                 <tr>
-                  <td>
-                    <a href="/pokemon/{{p.name}}">{{p.name |capitalize}}</a>
-                  </td>
+                  <td><a data-name = "{{p.name}}" href="/pokemon/{{p.name}}">{{p.name |capitalize}}</a></td>
+                  <td><a href="/attack">{{p.attack}}</a></td>
+                  <td><a href ="/defense">{{p.defense}}</a></td>
+                  <td><a href="/specialattack">{{p.specialattack}}</a></td>
+                  <td><a href ="/spdefense">{{p.spdefense}}</a></td>
                 </tr>
               {% endfor %}
+
             </table>
+
             </div>
 
           </div>
@@ -34,6 +103,15 @@
       </center>
     </div>
   </div>
+
+        <script>
+        $(document).ready(function() {
+          $('#pokemonSplash').DataTable({
+            "order": [[ 0, "desc" ]],
+            "iDisplayLength": 50
+          });
+        });
+      </script>
 </body>
 
 
