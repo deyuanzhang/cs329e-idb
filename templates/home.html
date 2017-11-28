@@ -4,6 +4,21 @@
 <head>
   <meta charset="utf-8">
   {% include "template.html" %}
+  <style>
+      .parallax {
+          /* The image used */
+          background-image: url("./static/images/pokemonHome.png");
+      
+          /* Set a specific height */
+          min-height: 500px; 
+      
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+  </style>
 </head>
 
 <body>
@@ -12,7 +27,7 @@
       <h1>Welcome to Kanto!</h1>
     </div>
     <center>
-      <img src="./static/images/pokemonHome.png" class="img-fluid" alt="Responsive image">
+      <div class="parallax"></div>
     </center>
   </div>
 </body>
