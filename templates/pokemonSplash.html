@@ -27,7 +27,7 @@
         <tbody>
           {% for p in pokemon_all %}
             <tr>
-              <td><a data-name = "{{p.name}}" href="/pokemon/{{p.name}}">{{p.name |capitalize}}</a></td>
+              <td><a data-name = "{{.name}}" href="/pokemon/{{p.name}}">{{p.name |capitalize}}</a></td>
               <td><a href="https://bulbapedia.bulbagarden.net/wiki/Statistic#Attack">{{p.attack}}</a></td>
               <td><a href ="https://bulbapedia.bulbagarden.net/wiki/Statistic#Defense">{{p.defense}}</a></td>
               <td><a href="https://bulbapedia.bulbagarden.net/wiki/Statistic#Special_Attack">{{p.specialattack}}</a></td>
@@ -41,10 +41,10 @@
 
   <!-- jQuery -->
   <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-  
+
   <!-- DataTables -->
   <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
-  
+
   <script>
   $(document).ready( function () {
     $('#pokemonSplash').DataTable();
