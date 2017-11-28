@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   {% include "template.html" %}
   <!-- DataTables CSS -->
-  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"  >
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 </head>
 
 <body>
@@ -47,15 +47,15 @@
         </table>
   </center>
   </div>
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-    
-    <!-- DataTables -->
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+   <!-- jQuery -->
+  <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  
+  <!-- DataTables -->
+  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <script>
-      $(function(){
-        $("#moveSplash").dataTable();
-      })
+   $(document).ready( function () {
+    $('#moveSplash').DataTable();
+} );
     </script>
 </body>
 </html>
