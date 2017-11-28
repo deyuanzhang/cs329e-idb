@@ -54,9 +54,8 @@ class Type(Base):
 	double_from = Column(String(63))
 	
 
-SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:password@localhost/pokedb')
+SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:password@localhost/newdb')
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
-
 
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)

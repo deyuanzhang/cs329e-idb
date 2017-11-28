@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   {% include "template.html" %}
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"  >
 </head>
 
 <body>
@@ -12,26 +14,48 @@
       <h1>Moves of Pokemon</h1>
       <p>Listing on the moves of Pokemon</p>
     </div>
-    <div class="row">
-      <center>
-        <div class="panel-group">
-          <div class="panel panel-default">
-            <div class="panel-heading"><h2>Meet the Moves!</h2></div>
-            <table>
-              {% for m in move_all %}
-                <tr>
-                  <td>
-                    <a href="/moves/{{m.name}}">{{m.name | capitalize}}</a>
-                  </td>
-                </tr>
-              {% endfor %}
-            </table>
-            </div>
-
-          </div>
-        </div>
-      </center>
-    </div>
+    <center>
+        <table id = "moveSplash" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Move Name</th>
+              <th>Power</th>
+              <th>Accuracy</th>
+              <th>Type</th>
+              <th>Power Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in move_all %}
+              <tr>
+                <td><a data-name = "{{m.name}}" href="/moves/{{m.name}}">{{m.name |capitalize}}</a></td>
+                {% if not m.power %}
+                  <td><a data-name = "{{ m.power }}" href="https://bulbapedia.bulbagarden.net/wiki/Power">{{ 0 }}</a></td>
+                {% else %}
+                <td><a data-name = "{{ m.power }}" href="https://bulbapedia.bulbagarden.net/wiki/Power">{{ m.power }}</a></td>
+                {% endif %}
+                {% if not m.accuracy %}
+                <td><a data-name = "{{ m.accuracy }}" href="https://bulbapedia.bulbagarden.net/wiki/Accuracy">{{ 0 }}</a></td>
+                {% else %}
+                <td><a data-name = "{{ m.accuracy }}" href="https://bulbapedia.bulbagarden.net/wiki/Accuracy">{{ m.accuracy }}</a></td>
+                {% endif %}
+                <td><a data-name = "{{ m.type }}" href="/types/{{m.type}}">{{ m.type |capitalize}}</a></td>
+                <td><a data-name = "{{ m.pp }}" href="https://bulbapedia.bulbagarden.net/wiki/Power_Point">{{ m.pp }}</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+  </center>
   </div>
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+    
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script>
+      $(function(){
+        $("#moveSplash").dataTable();
+      })
+    </script>
 </body>
 </html>

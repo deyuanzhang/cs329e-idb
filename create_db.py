@@ -12,7 +12,6 @@ from models import Type
 from moveFilter import gen1_moves
 from sqlalchemy.orm import sessionmaker
 
-print('starting')
 # bind the engine to the base class. This makes the connection
 # between our class definitions and the corresponding tables 
 # within our database
